@@ -1,5 +1,10 @@
 body {
-    margin :0;
-    background-color: red;
-    color:white;
+    margin: 0px;
+    font-family: "Muli", sans-serif;
+    text-shadow: rgba(0, 0, 0, 0.507) 0.1em 0.1em 0.1em;
+    background-image: linear-gradient(to right bottom, #da6147, #e75f80, #d871b7, #b08be0, #74a3f4, #4eb2f9, #22bff8, #00cbf0, #13d7f2, #2de4f3, #46eff3, #5ffbf1);
+  }
+
+*{
+    box-sizing: border-box;
 }

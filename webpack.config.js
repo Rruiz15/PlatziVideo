@@ -1,6 +1,7 @@
-const path = require('path')
-const HtmlWebPackPlugin = require('html-webpack-plugin')
-const MiniCssExtractplugin = require('mini-css-extract-plugin')
+const path = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const MiniCssExtractplugin = require('mini-css-extract-plugin');
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -17,35 +18,37 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: { loader: "babel-loader"
-                }
-            },
-            {
-                test: /\.html$/,
-                use:[
-                    {
-                        loader: "html-loader"
-                    }
-                ]
-            },
-            {
-                test: /\.(s*)css$/,
-                use:[  {
-                    loader: MiniCssExtractplugin.loader,
-                },
-                'css-loader',
-                'sass-loader'
-                ]}
-        ]
-    },
-    plugins:[
-        new HtmlWebPackPlugin({
-            template: './public/index.html',
-            filename: './index.html'
+        // eslint-disable-next-line quotes
+        use: { loader: "babel-loader",
+        },
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            // eslint-disable-next-line quotes
+            loader: "html-loader",
+          },
+        ],
+      },
+      {
+        test: /\.(s*)css$/,
+        use: [{
+          loader: MiniCssExtractplugin.loader,
+        },
+        'css-loader',
+        'sass-loader',
+        ] },
+    ],
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: './public/index.html',
+      filename: './index.html',
 
-        }),
-        new MiniCssExtractplugin({
-            filename: 'assets/[name].css'
-        })
-    ]
-}
+    }),
+    new MiniCssExtractplugin({
+      filename: 'assets/[name].css',
+    }),
+  ],
+};
